@@ -6,5 +6,5 @@ from posts import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include('insta_posts.urls'))
+    path("", include('posts.urls'))
 ]
