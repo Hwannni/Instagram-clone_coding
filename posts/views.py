@@ -3,15 +3,14 @@ from rest_framework.views import APIView
 from content.models import Feed
 from rest_framework.response import Response
 import os
-from minstagram.settings import MEDIA_ROOT
+from minstagram.settings import MEDIA_ROOT, MEDIA_URL
 from uuid import uuid4
 
 
 class Main(APIView):
     def get(self, request):
-        feed_list = Feed.objects.all()
+        feed_list = Feed.objects.all().order_by('-id')
         return render(request, 'minstagram/main.html', context=dict(feed_list=feed_list))
-    
 
 class UploadFeed(APIView):
     def post(self, request):
