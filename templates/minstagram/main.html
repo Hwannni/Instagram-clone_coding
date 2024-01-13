@@ -536,7 +536,9 @@ function writeFeed(fd) {
       },
       complete: function() {
           console.log("완료");
-          location.replace("/main");
+          alert('공유 완료.');
+          closeModal();
+          location.reload();
       }
   })
 };
@@ -572,7 +574,7 @@ function writeFeed(fd) {
 
         files = e.dataTransfer.files;
         if (files.length > 1) {
-            alert('하나만 올려라.');
+            alert('하나만 올려주세요.');
             return;
         }
 
