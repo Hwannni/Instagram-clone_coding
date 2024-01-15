@@ -6,3 +6,8 @@ class Feed(models.Model):
     profile_image = models.TextField()
     user_id       = models.TextField()
     like_count    = models.IntegerField()
+
+class Reply(models.Model):
+    feed_id = models.IntegerField(default=0)
+    email = models.EmailField(default='')
+    reply_content = models.TextField()
